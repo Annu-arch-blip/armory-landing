@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+/* ===========================================================
+   DESIGN TOKENS — from colorPallet.pdf and fonts.pdf
+   These CSS variables are the single source of truth for
+   colors and fonts across the whole app.
+   =========================================================== */
+:root {
+  /* --- Color Palette --- */
+  --color-arctic-powder: #F1F6F4;   /* lightest neutral */
+  --color-mystic-mint: #D9E8E2;     /* soft secondary neutral */
+  --color-forsythia: #FFC801;       /* primary accent yellow */
+  --color-deep-saffron: #FF9932;    /* secondary accent orange */
+  --color-nocturnal-expedition: #114C5A; /* deep teal */
+  --color-oceanic-noir: #172B36;    /* near-black background */
+
+  /* --- Semantic aliases (use these in components) --- */
+  --bg-primary: var(--color-oceanic-noir);
+  --bg-surface: var(--color-nocturnal-expedition);
+  --bg-light: var(--color-arctic-powder);
+  --bg-light-alt: var(--color-mystic-mint);
+
+  --accent-primary: var(--color-forsythia);
+  --accent-secondary: var(--color-deep-saffron);
+
+  --text-on-dark: var(--color-arctic-powder);
+  --text-on-dark-muted: #9fb3ba;
+  --text-on-light: var(--color-oceanic-noir);
+
+  /* --- Fonts --- */
+  --font-heading: 'JetBrains Mono', monospace;
+  --font-body: 'Inter', sans-serif;
+
+  /* --- Motion timing (per brief: Entrance & Motion Constraints) --- */
+  --ease-out-curve: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out-curve: cubic-bezier(0.65, 0, 0.35, 1);
+  --duration-micro: 180ms;      /* hovers/toggles: 150-200ms */
+  --duration-reflow: 350ms;     /* layout reflows: 300-400ms */
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-primary);
+  color: var(--text-on-dark);
+  font-family: var(--font-body);
+  scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+button {
+  font-family: var(--font-body);
+  cursor: pointer;
+}
+
+img, svg {
+  max-width: 100%;
+  display: block;
+}
